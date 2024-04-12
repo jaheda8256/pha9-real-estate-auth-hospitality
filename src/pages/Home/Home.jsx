@@ -4,6 +4,8 @@ import Header from "../Shared/Header/Header";
 import Navbar from "../Shared/Navbar/Navbar";
 import Slider from "../Shared/Slider/Slider";
 import Footer from "../Shared/Footer/Footer";
+import Hotel from "../Shared/Hotel/Hotel";
+import Resort from "../Shared/Resort/Resort";
 
 
 const Home = () => {
@@ -28,6 +30,8 @@ const Home = () => {
                 }
                 
             </div>
+            <Hotel></Hotel>
+            <Resort></Resort>
             <Footer></Footer>
         </div>
          

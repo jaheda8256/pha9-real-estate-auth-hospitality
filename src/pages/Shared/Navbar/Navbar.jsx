@@ -22,7 +22,7 @@ const Navbar = () => {
              {navLinks}
             </ul>
           </div>
-          <h2 className="text-2xl text-purple-600 font-extrabold">Atana</h2>
+          <h2 className="text-2xl text-purple-600 font-extrabold">FIVE</h2>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
