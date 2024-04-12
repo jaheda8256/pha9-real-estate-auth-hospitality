@@ -9,7 +9,7 @@
         "status": "sale",
         "area": "10,000 sq ft",
         "location": "Downtown",
-        "facilities": ["restaurant", "spa", "fitness center", "conference rooms"],
+        "facilities": ["restaurant, spa, fitness center, conference rooms"],
         "view_property_button": "https://example.com/view-property/1",
         "rating": 4.8,
         "rooms": 50
@@ -24,7 +24,7 @@
         "status": "sale",
         "area": "3,000 sq ft",
         "location": "Suburbs",
-        "facilities": ["garden", "fireplace", "homemade breakfast", "free Wi-Fi"],
+        "facilities": ["garden, fireplace, homemade breakfast, free Wi-Fi"],
         "view_property_button": "https://example.com/view-property/2",
         "rating": 4.5,
         "rooms": 10
@@ -39,7 +39,7 @@
         "status": "sale",
         "area": "25,000 sq ft",
         "location": "Coastal",
-        "facilities": ["private beach", "infinity pool", "tennis courts", "yoga studio"],
+        "facilities": ["private beach, infinity pool, tennis courts, yoga studio"],
         "view_property_button": "https://example.com/view-property/3",
         "rating": 4.9,
         "rooms": 100
@@ -54,7 +54,7 @@
         "status": "rent",
         "area": "6,000 sq ft",
         "location": "Beachfront",
-        "facilities": ["private pool", "beach access", "gourmet kitchen", "maid service"],
+        "facilities": ["private pool, beach access, gourmet kitchen, maid service"],
         "view_property_button": "https://example.com/view-property/4",
         "rating": 4.7,
         "rooms": 5
@@ -69,7 +69,7 @@
         "status": "sale",
         "area": "4,500 sq ft",
         "location": "Mountain",
-        "facilities": ["hot tub", "ski-in/ski-out access", "fire pit", "game room"],
+        "facilities": ["hot tub, ski-in/ski-out access, fire pit, game room"],
         "view_property_button": "https://example.com/view-property/5",
         "rating": 4.6,
         "rooms": 20
@@ -79,12 +79,12 @@
         "segment_name": "Hospitality",
         "estate_title": "Urban Boutique Hostel",
         "image": "https://i.ibb.co/tX8C5st/hotel-resorts.jpg",
-        "description": "Stay in style and comfort at our trendy urban hostel, perfect for budget-conscious travelers seeking a chic experience.",
+        "description": "Stay in style and comfort at our trendy urban hostel, perfect for budget-conscious travelers seeking a chic.",
         "price": "$900,000",
         "status": "sale",
         "area": "2,500 sq ft",
         "location": "City Center",
-        "facilities": ["shared kitchen", "rooftop terrace", "free breakfast", "social events"],
+        "facilities": ["shared kitchen, rooftop terrace, free breakfast, social events"],
         "view_property_button": "https://example.com/view-property/6",
         "rating": 4.4,
         "rooms": 30

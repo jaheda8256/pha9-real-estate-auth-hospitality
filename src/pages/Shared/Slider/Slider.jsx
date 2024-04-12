@@ -1,31 +1,46 @@
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+
+
 
 const Slider = () => {
     return (
-        <div>
-            <h2>This is slider</h2>
-            <div className="carousel w-full">
-  <div id="item1" className="carousel-item w-full">
-    <img src="https://i.ibb.co/R7mXBNQ/nice-tree.jpg" className="w-full" />
-  </div> 
-  <div id="item2" className="carousel-item w-full">
-    <img src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
-  </div> 
-  <div id="item3" className="carousel-item w-full">
-    <img src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
-  </div> 
-  <div id="item4" className="carousel-item w-full">
-    <img src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
-  </div>
-</div> 
-<div className="flex justify-center w-full py-2 gap-2">
-  <a href="#item1" className="btn btn-xs">1</a> 
-  <a href="#item2" className="btn btn-xs">2</a> 
-  <a href="#item3" className="btn btn-xs">3</a> 
-  <a href="#item4" className="btn btn-xs">4</a>
-</div>
+        <div className=' my-16'>
+          
+            <Swiper
+      spaceBetween={50}
+      slidesPerView={1}
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+     
+    >
+      <SwiperSlide>
+      <img src="https://i.ibb.co/k1BBfQk/dubai-habbi.jpg" alt="" className='absolute w-full h-[450px] rounded-xl '/>
+     <h1 className='relative text-5xl text-center pt-12 text-white  font-pop mt-32 ml-20 font-bold '>Enjoy your free time <br />with us.</h1>
+      
+      </SwiperSlide>
+      <SwiperSlide>
+      <img src="https://i.ibb.co/C8bmSWQ/hotel-image.jpg" alt="" className='w-full h-[450px] rounded-xl' />
+      </SwiperSlide>
+      <SwiperSlide>
+      <img src="https://i.ibb.co/Pr85s7B/bote.jpg" alt="" className='w-full h-[450px] rounded-xl'/>
+      </SwiperSlide>
+      <SwiperSlide>
+      <img src="https://i.ibb.co/8rzkBKX/suimming.jpg" alt="" className='w-full h-[450px] rounded-xl' />
+      </SwiperSlide>
+      
+    </Swiper>
         </div>
     );
 };
 
 export default Slider;
+
+
+
+
+
