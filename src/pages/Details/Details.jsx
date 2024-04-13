@@ -1,6 +1,7 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 const Details = () => {
 
@@ -12,6 +13,9 @@ const Details = () => {
 
     return (
 <div>
+  <Helmet>
+    <title>Card Details: {id}</title>
+  </Helmet>
   <Navbar></Navbar>
 <div className="grid gap-2 grid-cols-1 lg:grid-cols-2 my-20">
    <div>
