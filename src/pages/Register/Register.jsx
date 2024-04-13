@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 import { Link } from "react-router-dom";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 
 const Register = () => {
@@ -45,8 +46,11 @@ const Register = () => {
           <button className="btn btn-primary">Register</button>
         </div>
       </form>
+
       <p className="text-center mb-6">Already have an account? <Link className="text-blue-800 font-bold underline" to='/login'>Login</Link></p>
+
     </div>
+
   </div>
 </div>
 <Footer></Footer>

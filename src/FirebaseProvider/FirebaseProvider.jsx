@@ -1,9 +1,14 @@
+import { createContext } from "react";
 
-const FirebaseProvider = () => {
+
+
+export const AuthContext = createContext(null);
+const FirebaseProvider = ({children}) => {
+    const allValue = { name: 'test'}
     return (
-        <div>
-            
-        </div>
+        <AuthContext.Provider value={allValue}>
+           {children}
+        </AuthContext.Provider>
     );
 };
 
