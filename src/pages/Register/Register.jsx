@@ -2,14 +2,13 @@ import { Helmet } from "react-helmet-async";
 import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
-import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import useAuth from "../../hooks/useAuth";
 
 
 
 const Register = () => {
-  const {createUser} = useContext(AuthContext);
+  const {createUser} = useAuth();
 
 const {register, handleSubmit, formState: {errors}} = useForm();
   const onSubmit = data =>{ 
