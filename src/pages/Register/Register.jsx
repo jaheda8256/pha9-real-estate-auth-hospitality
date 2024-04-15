@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -24,8 +23,7 @@ const {register, handleSubmit, formState: {errors}} = useForm();
             <Helmet>
             <title>Real Estate | Register</title>
           </Helmet>
-            <Navbar></Navbar>
-            
+          <Navbar></Navbar> 
             <div className="hero min-h-screen bg-base-200 my-14 rounded-2xl">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -77,7 +75,6 @@ const {register, handleSubmit, formState: {errors}} = useForm();
 
   </div>
 </div>
-<Footer></Footer>
 </div>
     );
 };

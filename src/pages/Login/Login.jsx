@@ -26,8 +26,7 @@ const Login = () => {
           <Helmet>
             <title>Real Estate | Login</title>
           </Helmet>
-            <Navbar></Navbar>
-
+          <Navbar></Navbar>
             <div className="hero min-h-screen bg-base-200 my-16 rounded-2xl">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -58,13 +57,9 @@ const Login = () => {
      <p className="text-center mb-6">Do not have an account? <Link className="text-blue-800 font-bold underline" to='/register'>Register</Link></p>
      <SocialLogin></SocialLogin>
      
-    
     </div>
-
-   
   </div>
 </div>
-<Footer></Footer>
         </div>
     );
 };

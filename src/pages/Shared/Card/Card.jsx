@@ -22,7 +22,7 @@ const Card = ({cards}) => {
     
    </div>
     <div className="card-actions justify-end">
-      <Link to={`/details/${id}`} className="btn btn-primary">View Details</Link>
+      <Link to={`/details/${id}`} className="btn btn-primary">View Property</Link>
     </div>
   </div>
 </div>  

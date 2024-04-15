@@ -1,6 +1,6 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
-import Footer from "../Shared/Footer/Footer";
+
 import { Helmet } from "react-helmet-async";
 
 const Details = () => {
@@ -36,7 +36,6 @@ const Details = () => {
 
    </div>
 </div>
-<Footer></Footer>
 </div>
     );
 };
