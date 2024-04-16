@@ -1,7 +1,8 @@
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SocialLogin = () => {
     const {googleLogin, githubLogin} = useAuth();
@@ -13,12 +14,18 @@ const SocialLogin = () => {
     const handleSocialLogin = socialProvider =>{
         socialProvider()
         .then(result =>{
+          toast.success("Registration successfully");
            if(result.user){
-            
+           
             navigate(from);
-            
            }
         })
+
+        .catch(error => {
+          console.error(error);
+          toast.error("Registration failed. Please try again."); 
+        });
+
     }
 
     return (
@@ -32,6 +39,7 @@ const SocialLogin = () => {
           <FaGithub />
           Login with Github
         </button>
+        <ToastContainer></ToastContainer>
         </div>
         </div>
     );
