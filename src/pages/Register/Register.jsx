@@ -3,19 +3,35 @@ import Navbar from "../Shared/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Footer from "../Shared/Footer/Footer";
+
 
 
 
 const Register = () => {
   const {createUser} = useAuth();
-
+  const [showPassword, setShowPassword] = useState(false);
 const {register, handleSubmit, formState: {errors}} = useForm();
-  const onSubmit = data =>{ 
-    const {email, password} = data
+  const onSubmit = (data) =>{ 
+    const {email, password} = data;
     createUser(email, password)
     .then(result => {
       console.log(result);
+      toast.success("Registration successfully"); 
+
     })
+
+    .catch(error => {
+      console.error(error);
+      toast.error("Registration failed. Please try again."); 
+    });
+
   };
   
     return (
@@ -59,22 +75,47 @@ const {register, handleSubmit, formState: {errors}} = useForm();
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" className="input input-bordered" 
-          {...register('password', { required: true })}
+          <input type={showPassword ? "text" : "password"}
+            name="password"
+           placeholder="password" 
+           className="input input-bordered relative" 
+          {...register("password", {
+            required: true,
+            minLength: 6,
+            pattern: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/  // Corrected pattern
+          })}
+
           />
-          {errors.password && <span className="text-red-600">This field is required</span>}
+           <span className="absolute ml-56 mt-14 hover:cursor-pointer" onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+            </span>
+            {errors.password && (
+                  <span className="text-red-500">
+                    {" "}
+                    Password must be at least 6 characters long and contain at
+                    least one uppercase and one lowercase letter
+                  </span>
+                )}
+
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Register</button>
+          <button type="submit" className="btn btn-primary">Register</button>
         </div>
+        <ToastContainer />
+
       </form>
 
-      <p className="text-center mb-6">Already have an account? <Link className="text-blue-800 font-bold underline" to='/login'>Login</Link></p>
-
+      <p className="text-center mb-6">Already have an account?
+      <Link to="/login">
+                {" "}
+                <span className="text-blue-600">Login now</span>
+              </Link>
+      </p>
     </div>
 
   </div>
 </div>
+<Footer></Footer>
 </div>
     );
 };

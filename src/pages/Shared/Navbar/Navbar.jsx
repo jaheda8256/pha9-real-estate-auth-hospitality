@@ -24,6 +24,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/userProfile"> User profile</NavLink>
       </li>
+      <li>
+        <NavLink to="/about">About</NavLink>
+      </li>
     </>
   );
   return (
@@ -55,65 +58,9 @@ const Navbar = () => {
         </div>
         <h2 className="text-2xl text-purple-600 font-extrabold">FIVE</h2>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+      <div className="navbar-center mr-56 hidden lg:flex">
+        <ul className="menu menu-horizontal ml-44 px-1">{navLinks}</ul>
       </div>
-
-      {/* <div className="navbar-end gap-4">
-        <Link to="/login">
-          {user ? (
-            <button
-              onClick={logout}
-              className="btn bg-gradient-to-r from-cyan-400 to-blue-500 text-white"
-            >
-              LogOut
-            </button>
-          ) : (
-            <button
-              onClick={logout}
-              className="btn bg-gradient-to-r from-cyan-400 to-blue-500 text-white"
-            >
-              Login
-            </button>
-          )}
-        </Link>
-      </div>
-
-      {user && (
-        <div className="navbar-end gap-4">
-          <div className="dropdown dropdown-end">
-            <label
-              tabIndex={0}
-              className="tooltip tooltip-bottom mr-4  btn btn-ghost  btn-circle avatar"
-              data-tip={tooltipString}
-            >
-              <div className="w-10 rounded-full ">
-                <img
-                  src={
-                    user?.photoURL ||
-                    "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                  }
-                />
-              </div>
-            </label>
-
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
-            >
-              <li>
-                <button className="btn btn-sm  btn-ghost">
-                  {user?.displayName || "user name not found"}
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};  */}
-
 
 {user && (
           <div className="navbar-end gap-4">
@@ -138,19 +85,19 @@ const Navbar = () => {
           </div>
         )}
 
-        <div className=" gap-4">
+        <div className="gap-4">
           <Link to="/login">
             {user ? (
               <button
                 onClick={logout}
-                className="btn bg-gradient-to-r from-cyan-400 to-blue-500 text-white"
+                className="btn bg-gradient-to-r from-purple-700 to-pink-400 text-white"
               >
                 LogOut
               </button>
             ) : (
               <button
                 onClick={logout}
-                className="btn bg-gradient-to-r from-cyan-400 to-blue-500 text-white"
+                className="btn bg-gradient-to-r from-purple-700  to-pink-400 text-white"
               >
                 Login
               </button>

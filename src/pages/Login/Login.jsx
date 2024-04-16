@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
@@ -5,21 +6,31 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
 import useAuth from "../../hooks/useAuth";
-
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const {signInUser} = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
   const {register, handleSubmit, formState: {errors}} = useForm();
-  const onSubmit = data =>{
-   const {email, password} = data;
-   signInUser(email, password)
-   .then(result => {
-    console.log(result.user);
-   })
-   .catch(error =>{
-    console.error(error);
-   })
+
+
+   const onSubmit = (data) => {
+    const { email, password } = data;
+    signInUser(email, password)
+      .then((result) => {
+        toast.success("Login successful", result);
+      })
+      .catch((error) => {
+        toast.error(
+          "Failed to login. Please check your email or password.",
+          error
+        );
+      });
   };
+
 
     return (
         <div>
@@ -45,21 +56,28 @@ const Login = () => {
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" name="password" placeholder="password" className="input input-bordered"  {...register('password', { required: true })}/>
+          <input type={showPassword ? "text" : "password"}
+           name="password" 
+           placeholder="password"
+            className="input input-bordered"  {...register('password', { required: true })}/>
+          <span className="absolute ml-64 mt-14 hover:cursor-pointer" onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+            </span>
           {errors.password && <span className="text-red-600">This field is required</span>}
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
-       
+        <ToastContainer />
       </form>
-
+      <SocialLogin></SocialLogin>
      <p className="text-center mb-6">Do not have an account? <Link className="text-blue-800 font-bold underline" to='/register'>Register</Link></p>
-     <SocialLogin></SocialLogin>
+     
      
     </div>
   </div>
 </div>
+<Footer></Footer>
         </div>
     );
 };

@@ -11,24 +11,30 @@ const githubProvider = new GithubAuthProvider();
 
 const FirebaseProvider = ({children}) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+   
 console.log(user);
     // create user 
     const createUser = (email, password) =>{
+        setLoading(true);
      return createUserWithEmailAndPassword(auth, email, password)
     }
 
 
     // sign in user
     const signInUser = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     // google login
     const googleLogin = () =>{
+        setLoading(true);
        return signInWithPopup(auth, googleProvider)
     }
     // github login
-    const githubLogin = () =>{
+    const githubLogin = () =>{ 
+        setLoading(true);
        return signInWithPopup(auth, githubProvider)
     }
 
@@ -40,11 +46,15 @@ console.log(user);
 
 // observer
 useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+ const unSubscribe =  onAuthStateChanged(auth, (user) => {
         if (user) {
          setUser(user)
+         setLoading(false);
         } 
       });
+      return () =>{
+        unSubscribe()
+      }
 
 },[])
 
@@ -54,7 +64,9 @@ useEffect(() => {
         googleLogin,
         githubLogin,
         logout,
-        user
+        user,
+        setUser,
+         loading,
     }
     return (
         <AuthContext.Provider value={allValues}>

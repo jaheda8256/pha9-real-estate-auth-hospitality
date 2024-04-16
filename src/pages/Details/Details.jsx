@@ -2,7 +2,8 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 
 import { Helmet } from "react-helmet-async";
-
+import 'animate.css';
+import Footer from "../Shared/Footer/Footer";
 const Details = () => {
 
     const details = useLoaderData();
@@ -17,11 +18,11 @@ const Details = () => {
     <title>Card Details: {id}</title>
   </Helmet>
   <Navbar></Navbar>
-<div className="grid gap-2 grid-cols-1 lg:grid-cols-2 my-20">
+<div className="grid gap-2 grid-cols-1 lg:grid-cols-2 my-10">
    <div>
-<img className="rounded-2xl mt-6x mt-6" src={detail.image} alt="" />
+<img className="rounded-2xl mt-6x mt-6 animate__animated animate__fadeInLeft" src={detail.image} alt="" />
    </div>
-   <div className="p-4">
+   <div className="p-4 animate__animated animate__fadeInRight">
    <h2 className="text-4xl mb-4 font-bold">{detail.segment_name}</h2>
    <h2 className="text-3xl mb-4">{detail.estate_title}</h2>
    <p className="mb-4">{detail.description}</p>
@@ -36,6 +37,7 @@ const Details = () => {
 
    </div>
 </div>
+<Footer></Footer>
 </div>
     );
 };

@@ -7,7 +7,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 const Slider = () => {
     return (
-        <div className=' my-16'>
+        <div className='lg:my-16 mt-24'>
           
             <Swiper
       spaceBetween={50}
