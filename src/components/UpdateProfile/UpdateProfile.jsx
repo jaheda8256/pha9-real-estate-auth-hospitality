@@ -5,6 +5,7 @@ import Navbar from "../../pages/Shared/Navbar/Navbar";
 import useAuth from "../../hooks/useAuth";
 import { updateProfile } from "firebase/auth";
 import Footer from "../../pages/Shared/Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
   const { user, setUser } = useAuth();
@@ -68,6 +69,9 @@ const UpdateProfile = () => {
 
   return (
     <div>
+      <Helmet>
+          <title>Real Estate | UpdateProfile</title>
+       </Helmet>
       <Navbar></Navbar>
       <div className="mx-auto bg-purple-400 w-[400px] h-[300px] p-4 border-2 my-24 shadow-2xl rounded-xl">
         <h2 className=" text-3xl text-center">Update Profile</h2>

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Footer from "../../pages/Shared/Footer/Footer";
 import Navbar from "../../pages/Shared/Navbar/Navbar";
 
@@ -5,6 +6,9 @@ import Navbar from "../../pages/Shared/Navbar/Navbar";
 const About = () => {
     return (
         <div>
+			<Helmet>
+                <title>Real Estate | About</title>
+            </Helmet>
             <Navbar></Navbar>
 
             <h2 className="text-center text-5xl font-extrabold text-purple-600 mt-20">Special Resort</h2>

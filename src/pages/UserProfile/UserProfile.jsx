@@ -1,4 +1,5 @@
 
+import { Helmet } from "react-helmet-async";
 import useAuth from "../../hooks/useAuth";
 import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
@@ -12,6 +13,9 @@ const UserProfile = () => {
     } 
     return (
         <div>
+            <Helmet>
+                <title>Real Estate | UserProfile</title>
+            </Helmet>
             <Navbar></Navbar>
              <div className="w-[400px] h-[300px] p-8 border-2 my-24 bg-purple-400 shadow-2xl rounded-xl mx-auto">
          {user &&
