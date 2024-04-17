@@ -10,22 +10,32 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink to="/"><span className="font-bold">Home</span></NavLink>
+        <NavLink to="/">
+          <span className="font-bold">Home</span>
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/updateProfile"><span className="font-bold">Update Profile</span></NavLink>
+        <NavLink to="/updateProfile">
+          <span className="font-bold">Update Profile</span>
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/userProfile"> <span className="font-bold"> User profile</span></NavLink>
+        <NavLink to="/userProfile">
+          {" "}
+          <span className="font-bold"> User profile</span>
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/about"> <span className="font-bold"> About</span></NavLink>
+        <NavLink to="/about">
+          {" "}
+          <span className="font-bold"> About</span>
+        </NavLink>
       </li>
     </>
   );
   return (
-    <div className="navbar bg-base-100 m1-10 mt-6">
-      <div className="navbar-start">
+    <div className="navbar bg-base-100 justify-between m1-10 mt-6">
+      <div className="navbar-start w-auto">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -43,27 +53,28 @@ const Navbar = () => {
               />
             </svg>
           </div>
+
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box "
           >
             {navLinks}
           </ul>
         </div>
-        <h2 className="text-4xl text-purple-600 font-extrabold">FIVE</h2>
+        <h2 className="text-2xl text-purple-600 font-extrabold">FIVE</h2>
       </div>
-      <div className="navbar-center mr-52 hidden lg:flex">
-        <ul className="menu menu-horizontal ml-72 px-1">{navLinks}</ul>
+      <div className="navbar-center  hidden lg:flex">
+        <ul className="menu menu-horizontal  px-1">{navLinks}</ul>
       </div>
 
-{user && (
+      <div>
+        {user && (
           <div className="navbar-end gap-4">
             <div className="dropdown dropdown-end ">
               <label
                 tabIndex={0}
                 className="tooltip tooltip-bottom mr-4  btn btn-ghost  btn-circle avatar"
                 data-tip={tooltipString}
-              
               >
                 <div className="w-12 rounded-full ">
                   <img
@@ -74,7 +85,6 @@ const Navbar = () => {
                   />
                 </div>
               </label>
-
             </div>
           </div>
         )}
@@ -99,6 +109,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
+    </div>
   );
 };
 
