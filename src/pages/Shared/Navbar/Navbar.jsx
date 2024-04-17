@@ -15,12 +15,6 @@ const Navbar = () => {
       <li>
         <NavLink to="/updateProfile"><span className="font-bold">Update Profile</span></NavLink>
       </li>
-      {/* <li>
-        <NavLink to="/register">Register</NavLink>
-      </li>
-      <li>
-        <NavLink to="/login">Login</NavLink>
-      </li> */}
       <li>
         <NavLink to="/userProfile"> <span className="font-bold"> User profile</span></NavLink>
       </li>
@@ -58,7 +52,7 @@ const Navbar = () => {
         </div>
         <h2 className="text-4xl text-purple-600 font-extrabold">FIVE</h2>
       </div>
-      <div className="navbar-center mr-72 hidden lg:flex">
+      <div className="navbar-center mr-52 hidden lg:flex">
         <ul className="menu menu-horizontal ml-72 px-1">{navLinks}</ul>
       </div>
 
