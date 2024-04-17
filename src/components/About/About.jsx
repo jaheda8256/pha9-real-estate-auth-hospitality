@@ -11,7 +11,7 @@ const About = () => {
             </Helmet>
             <Navbar></Navbar>
 
-            <h2 className="text-center text-5xl font-extrabold text-purple-600 mt-20">Special Resort</h2>
+			<h2 className="text-center text-purple-600 text-5xl font-bold mt-16 mb-4 ">Special <span className=" text-teal-600">Resort</span></h2>
             <p className="text-center mt-3">
           Our resort offers a luxurious and relaxing experience nestled in the heart of nature.With stunning views, top-notch <br />amenities, and a variety of activities, your stay with us 
           will be unforgettable.

@@ -12,7 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  const {signInUser, loading} = useAuth();
+  const {signInUser} = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const {register, handleSubmit, formState: {errors}} = useForm();
 
@@ -31,9 +31,7 @@ const Login = () => {
       });
   };
 
-  if(loading){
-    return <span className="loading loading-spinner loading-lg"></span>
-}
+
     return (
         <div>
           <Helmet>
@@ -62,13 +60,13 @@ const Login = () => {
            name="password" 
            placeholder="password"
             className="input input-bordered"  {...register('password', { required: true })}/>
-          <span className="absolute ml-64 mt-14 hover:cursor-pointer" onClick={() => setShowPassword(!showPassword)}>
+          <span className="absolute lg:ml-72 ml-52 mt-14 hover:cursor-pointer" onClick={() => setShowPassword(!showPassword)}>
               {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
             </span>
           {errors.password && <span className="text-red-600">This field is required</span>}
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn bg-gradient-to-r from-purple-700 to-teal-600 text-white">Login</button>
         </div>
         <ToastContainer />
       </form>

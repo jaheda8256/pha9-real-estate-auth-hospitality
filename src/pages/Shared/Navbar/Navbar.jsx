@@ -56,7 +56,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <h2 className="text-2xl text-purple-600 font-extrabold">FIVE</h2>
+        <h2 className="text-4xl text-purple-600 font-extrabold">FIVE</h2>
       </div>
       <div className="navbar-center mr-56 hidden lg:flex">
         <ul className="menu menu-horizontal ml-44 px-1">{navLinks}</ul>
@@ -90,14 +90,14 @@ const Navbar = () => {
             {user ? (
               <button
                 onClick={logout}
-                className="btn bg-gradient-to-r from-purple-700 to-pink-400 text-white"
+                className="btn bg-gradient-to-r from-purple-700 to-teal-600 text-white"
               >
                 LogOut
               </button>
             ) : (
               <button
                 onClick={logout}
-                className="btn bg-gradient-to-r from-purple-700  to-pink-400 text-white"
+                className="btn bg-gradient-to-r from-purple-700  to-teal-600 text-white"
               >
                 Login
               </button>

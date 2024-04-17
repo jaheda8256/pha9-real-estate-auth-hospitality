@@ -70,9 +70,9 @@ const UpdateProfile = () => {
         <title>Real Estate | UpdateProfile</title>
       </Helmet>
       <Navbar></Navbar>
-      <div className="mx-auto bg-purple-400 lg:w-[400px] h-[300px] p-4 border-2 my-24 shadow-2xl rounded-xl">
-        <h2 className=" text-3xl text-center">Update Profile</h2>
-        <div className="flex flex-col mt-4 gap-2">
+      <div className="mx-auto  bg-gradient-to-r from-purple-700 to-teal-600 lg:w-[450px] h-[400px] p-4 lg:p-8 border-2 my-24 shadow-2xl rounded-xl">
+        <h2 className=" text-4xl text-center font-bold mb-8 text-white">Update Profile</h2>
+        <div className="flex flex-col mt-4 space-y-3 gap-2">
           <input
             className="w-full h-10 p-2 rounded-md border-2"
             type="text"
@@ -97,7 +97,7 @@ const UpdateProfile = () => {
           />
           <button
             onClick={handleUpdateProfile}
-            className="btn bg-purple-800 mt-2 mb-8 text-white"
+            className="btn bg-gradient-to-r from-teal-700 to-purple-900 mt-2 mb-8 text-white border-none"
           >
             Update Profile
           </button>

@@ -22,7 +22,7 @@ const Card = ({cards}) => {
     
    </div>
     <div className="card-actions justify-end">
-      <Link to={`/details/${id}`} className="btn btn-primary">View Property</Link>
+      <Link to={`/details/${id}`} className="btn bg-gradient-to-r from-purple-700 to-teal-600 text-white">View Property</Link>
     </div>
   </div>
 </div>  

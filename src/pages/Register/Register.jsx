@@ -15,7 +15,7 @@ import Footer from "../Shared/Footer/Footer";
 
 
 const Register = () => {
-  const {createUser, loading} = useAuth();
+  const {createUser} = useAuth();
   const [showPassword, setShowPassword] = useState(false);
 const {register, handleSubmit, formState: {errors}} = useForm();
   const onSubmit = (data) =>{ 
@@ -34,9 +34,7 @@ const {register, handleSubmit, formState: {errors}} = useForm();
 
   };
 
-  if(loading){
-    return <span className="loading loading-spinner loading-lg"></span>
-}
+
   
     return (
         <div>
@@ -46,7 +44,7 @@ const {register, handleSubmit, formState: {errors}} = useForm();
           <Navbar></Navbar> 
             <div className="hero min-h-screen bg-base-200 my-14 rounded-2xl">
   <div className="hero-content flex-col lg:flex-row-reverse">
-    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div className="card lg:m-12 shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
     <h2 className="text-4xl text-center font-bold p-4 pt-8">Please Register</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="card-body">
         <div className="form-control">
@@ -90,7 +88,7 @@ const {register, handleSubmit, formState: {errors}} = useForm();
           })}
 
           />
-           <span className="absolute ml-56 mt-14 hover:cursor-pointer" onClick={() => setShowPassword(!showPassword)}>
+           <span className="absolute lg:ml-72 ml-52 mt-14 hover:cursor-pointer" onClick={() => setShowPassword(!showPassword)}>
               {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
             </span>
             {errors.password && (
@@ -103,7 +101,7 @@ const {register, handleSubmit, formState: {errors}} = useForm();
 
         </div>
         <div className="form-control mt-6">
-          <button type="submit" className="btn btn-primary">Register</button>
+          <button type="submit" className="btn bg-gradient-to-r from-purple-700 to-teal-600 text-white">Register</button>
         </div>
         <ToastContainer />
 
@@ -112,7 +110,7 @@ const {register, handleSubmit, formState: {errors}} = useForm();
       <p className="text-center mb-6">Already have an account?
       <Link to="/login">
                 {" "}
-                <span className="text-blue-600">Login now</span>
+                <span className="text-blue-600 underline font-bold">Login now</span>
               </Link>
       </p>
     </div>
