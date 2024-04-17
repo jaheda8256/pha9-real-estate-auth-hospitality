@@ -10,10 +10,10 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/"><span className="font-bold">Home</span></NavLink>
       </li>
       <li>
-        <NavLink to="/updateProfile"> Update Profile</NavLink>
+        <NavLink to="/updateProfile"><span className="font-bold">Update Profile</span></NavLink>
       </li>
       {/* <li>
         <NavLink to="/register">Register</NavLink>
@@ -22,15 +22,15 @@ const Navbar = () => {
         <NavLink to="/login">Login</NavLink>
       </li> */}
       <li>
-        <NavLink to="/userProfile"> User profile</NavLink>
+        <NavLink to="/userProfile"> <span className="font-bold"> User profile</span></NavLink>
       </li>
       <li>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/about"> <span className="font-bold"> About</span></NavLink>
       </li>
     </>
   );
   return (
-    <div className="navbar bg-base-100 m1-10">
+    <div className="navbar bg-base-100 m1-10 mt-6">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
