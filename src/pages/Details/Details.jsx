@@ -58,6 +58,7 @@ const Details = () => {
       </div>
       <Footer></Footer>
     </div>
+     
   );
 };
 
