@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-
+import PropTypes from 'prop-types'; 
 
 const Card = ({cards}) => {
 
- const {estate_title, image, segment_name, price, status, area, location, rooms, id} = cards;
+ const {estate_title, image, segment_name, price, status, area, rooms, id} = cards;
     return (
         <div>
             
@@ -30,4 +30,7 @@ const Card = ({cards}) => {
     );
 };
 
+Card.propTypes = {
+  name: PropTypes.node
+};
 export default Card;
