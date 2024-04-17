@@ -15,7 +15,7 @@ import Footer from "../Shared/Footer/Footer";
 
 
 const Register = () => {
-  const {createUser} = useAuth();
+  const {createUser, loading} = useAuth();
   const [showPassword, setShowPassword] = useState(false);
 const {register, handleSubmit, formState: {errors}} = useForm();
   const onSubmit = (data) =>{ 
@@ -33,6 +33,10 @@ const {register, handleSubmit, formState: {errors}} = useForm();
     });
 
   };
+
+  if(loading){
+    return <span className="loading loading-spinner loading-lg"></span>
+}
   
     return (
         <div>

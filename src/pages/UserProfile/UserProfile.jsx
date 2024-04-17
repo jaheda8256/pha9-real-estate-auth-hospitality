@@ -17,7 +17,7 @@ const UserProfile = () => {
                 <title>Real Estate | UserProfile</title>
             </Helmet>
             <Navbar></Navbar>
-             <div className="w-[400px] h-[300px] p-8 border-2 my-24 bg-purple-400 shadow-2xl rounded-xl mx-auto">
+             <div className="lg:w-[400px] h-[300px] p-8 border-2 my-24 bg-purple-400 shadow-2xl rounded-xl mx-auto">
          {user &&
                 <div>
                     <h3 className="font-bold">User: {user.displayName}</h3>

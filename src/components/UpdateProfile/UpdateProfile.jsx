@@ -38,14 +38,11 @@ const UpdateProfile = () => {
         console.log("Profile updated successfully");
 
         setUser({
-             ...user,
-            displayName: name || user.displayName,
-            photoURL: photoURL || user.photoURL,
-            email: email || user.email,
-            
-          });
-
-   
+          ...user,
+          displayName: name || user.displayName,
+          photoURL: photoURL || user.photoURL,
+          email: email || user.email,
+        });
       })
 
       .catch((error) => {
@@ -70,14 +67,14 @@ const UpdateProfile = () => {
   return (
     <div>
       <Helmet>
-          <title>Real Estate | UpdateProfile</title>
-       </Helmet>
+        <title>Real Estate | UpdateProfile</title>
+      </Helmet>
       <Navbar></Navbar>
-      <div className="mx-auto bg-purple-400 w-[400px] h-[300px] p-4 border-2 my-24 shadow-2xl rounded-xl">
+      <div className="mx-auto bg-purple-400 lg:w-[400px] h-[300px] p-4 border-2 my-24 shadow-2xl rounded-xl">
         <h2 className=" text-3xl text-center">Update Profile</h2>
         <div className="flex flex-col mt-4 gap-2">
           <input
-            className="w-full h-10 p-2  rounded-md border-2"
+            className="w-full h-10 p-2 rounded-md border-2"
             type="text"
             placeholder="Update your name"
             value={name}

@@ -12,7 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  const {signInUser} = useAuth();
+  const {signInUser, loading} = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const {register, handleSubmit, formState: {errors}} = useForm();
 
@@ -31,7 +31,9 @@ const Login = () => {
       });
   };
 
-
+  if(loading){
+    return <span className="loading loading-spinner loading-lg"></span>
+}
     return (
         <div>
           <Helmet>
