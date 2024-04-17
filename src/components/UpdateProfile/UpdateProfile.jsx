@@ -92,6 +92,7 @@ const UpdateProfile = () => {
             className="w-full h-10 p-2 mt-2 rounded-md border-2"
             type="email"
             placeholder="email"
+            readOnly
             value={email}
             onChange={handleEmailChange}
           />

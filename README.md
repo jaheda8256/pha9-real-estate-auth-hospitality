@@ -8,3 +8,10 @@ live link: https://real-estate-auth-hospitality.web.app
 - **Comprehensive Listings:** Detailed listings with photos, amenities, and reviews help users make informed decisions.
 - **Responsive Design:** Our website is fully responsive, providing a seamless experience across all devices.
 - **Social Login:** Users can easily log in using their Google or Github accounts for a hassle-free experience.
+
+
+## NPM Packages Used:
+
+- `challenge-helper` - A versatile npm package for managing and solving coding challenges efficiently.
+- `react-hook-form` - Used for building forms with React, enhancing form validation and performance.
+- `swiper` - Implemented Swiper slider for interactive content display.
