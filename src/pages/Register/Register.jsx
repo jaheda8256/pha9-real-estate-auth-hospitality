@@ -117,7 +117,7 @@ const {register, handleSubmit, formState: {errors}} = useForm();
 
   </div>
 </div>
-<Footer></Footer>
+
 </div>
     );
 };

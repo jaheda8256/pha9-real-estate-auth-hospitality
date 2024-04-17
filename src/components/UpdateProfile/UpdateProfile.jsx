@@ -104,7 +104,7 @@ const UpdateProfile = () => {
           </button>
         </div>
       </div>
-      <Footer></Footer>
+     
     </div>
   );
 };

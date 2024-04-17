@@ -50,7 +50,7 @@ const Home = () => {
             <Hotel></Hotel>
             <Resort></Resort>
             <Leaflet></Leaflet>
-            <Footer></Footer>
+           
         </div>
          
         
