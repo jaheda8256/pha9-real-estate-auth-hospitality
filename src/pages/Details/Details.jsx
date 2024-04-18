@@ -1,9 +1,7 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
-
 import { Helmet } from "react-helmet-async";
 import "animate.css";
-import Footer from "../Shared/Footer/Footer";
 const Details = () => {
   const details = useLoaderData();
   const { id } = useParams();

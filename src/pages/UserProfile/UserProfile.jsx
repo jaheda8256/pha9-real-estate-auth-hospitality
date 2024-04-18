@@ -1,7 +1,6 @@
 
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../hooks/useAuth";
-import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 
 

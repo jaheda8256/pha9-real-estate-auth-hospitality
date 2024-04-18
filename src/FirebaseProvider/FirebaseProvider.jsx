@@ -22,36 +22,38 @@ const FirebaseProvider = ({ children }) => {
   console.log(user);
   // create user
   const createUser = (email, password) => {
-    setLoading(true);
+    setLoading(false);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // sign in user
   const signInUser = (email, password) => {
-    setLoading(true);
+    setLoading(false);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   // google login
   const googleLogin = () => {
-    setLoading(true);
+    setLoading(false);
     return signInWithPopup(auth, googleProvider);
   };
   // github login
   const githubLogin = () => {
-    setLoading(true);
+    setLoading(false);
     return signInWithPopup(auth, githubProvider);
   };
 
   // logout
   const logout = () => {
     setUser(null);
-    signOut(auth);
+   return signOut(auth);
   };
 
   // observer
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
+
+
       if (user) {
         setUser(user);
       }

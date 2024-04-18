@@ -10,7 +10,6 @@ import { Helmet } from "react-helmet-async";
 import BreakingNews from "./BreakingNews";
 import Leaflet from "../../components/Leaflet/Leaflet";
 import 'animate.css';
-import Footer from "../Shared/Footer/Footer";
 import useAuth from "../../hooks/useAuth";
 
 

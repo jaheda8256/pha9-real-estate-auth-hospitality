@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
-
-// import { updateProfile } from "firebase/auth";
 import Navbar from "../../pages/Shared/Navbar/Navbar";
 import useAuth from "../../hooks/useAuth";
 import { updateProfile } from "firebase/auth";
-import Footer from "../../pages/Shared/Footer/Footer";
 import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
