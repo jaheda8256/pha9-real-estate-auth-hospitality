@@ -6,7 +6,7 @@ import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 
 import { updateProfile } from "firebase/auth";
 
@@ -30,11 +30,16 @@ const Register = () => {
   const onSubmit = (data) => {
     const { fullName, email, password, photoURL} = data;
 
+
     createUser(email, password)
       .then((result) => {
-        console.log(result);
-        toast.success("Registration successfully");
 
+        if(result.user){
+          toast.success("Registration successfully");
+          navigate(from);
+        }
+        console.log(result);
+       
         const profileUpdates = {
           displayName: fullName,
           photoURL: photoURL
@@ -50,7 +55,7 @@ const Register = () => {
         .catch((error) => {
           console.error("Error updating profile:", error);
         });
-      navigate(from);
+      
     })
 
       .catch((error) => {

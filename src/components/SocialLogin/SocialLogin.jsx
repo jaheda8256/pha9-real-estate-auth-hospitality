@@ -1,8 +1,8 @@
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+
 
 const SocialLogin = () => {
     const {googleLogin, githubLogin} = useAuth();
@@ -39,7 +39,7 @@ const SocialLogin = () => {
           <FaGithub />
           Login with Github
         </button>
-        <ToastContainer></ToastContainer>
+      
         </div>
         </div>
     );
