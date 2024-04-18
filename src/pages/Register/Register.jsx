@@ -8,30 +8,46 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import { updateProfile } from "firebase/auth";
+
+
 const Register = () => {
   const { createUser } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
-
 
   const navigate = useNavigate();
   const location = useLocation();
 
   const from = location?.state || "/";
 
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+
   const onSubmit = (data) => {
-    const { email, password} = data;
+    const { fullName, email, password, photoURL} = data;
+
     createUser(email, password)
       .then((result) => {
         console.log(result);
         toast.success("Registration successfully");
-        navigate(from);
-      })
+
+        const profileUpdates = {
+          displayName: fullName,
+          photoURL: photoURL
+        };
+        updateProfile(result.user, profileUpdates)
+        .then(() => {
+          console.log("Profile updated successfully");
+        })
+        .catch((error) => {
+          console.error("Error updating profile:", error);
+        });
+      navigate(from);
+    })
 
       .catch((error) => {
         console.error(error);
@@ -86,13 +102,14 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text">PhotoURL</span>
                 </label>
-                <input
-                  type="photoURL"
-                  name="photoURL"
-                  placeholder="Photo URL"
-                  className="input input-bordered"
-                  {...register("PhotoURL")}
-                />
+              
+        <input
+       type="text"
+        name="photoURL"
+        placeholder="Photo URL"
+        className="input input-bordered"
+      {...register("photoURL")} 
+        />
               </div>
               <div className="form-control">
                 <label className="label">
@@ -131,7 +148,6 @@ const Register = () => {
                   Register
                 </button>
               </div>
-          
             </form>
 
             <p className="text-center mb-6">
