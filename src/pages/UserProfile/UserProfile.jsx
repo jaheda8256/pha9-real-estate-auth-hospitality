@@ -6,10 +6,8 @@ import Navbar from "../Shared/Navbar/Navbar";
 
 const UserProfile = () => {
 
-    const {user,loading} = useAuth();
-    if(loading){
-        return <span className="loading loading-spinner loading-lg"></span>
-    } 
+    const {user} = useAuth();
+   
     return (
         <div>
             <Helmet>

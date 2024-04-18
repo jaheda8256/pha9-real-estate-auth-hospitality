@@ -9,18 +9,12 @@ import { Helmet } from "react-helmet-async";
 import BreakingNews from "./BreakingNews";
 import Leaflet from "../../components/Leaflet/Leaflet";
 import 'animate.css';
-import useAuth from "../../hooks/useAuth";
-
 
 const Home = () => {
     const cards = useLoaderData();
-    const {loading} = useAuth();
    
     console.log(cards);
 
-    if(loading){
-        return <span className="loading loading-spinner loading-lg"></span>
-    }
 
     return (
         <div>
