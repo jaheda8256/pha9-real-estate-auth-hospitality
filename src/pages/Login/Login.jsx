@@ -8,7 +8,7 @@ import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 
 const Login = () => {
   const {signInUser} = useAuth();
@@ -23,7 +23,9 @@ const Login = () => {
     const { email, password } = data;
     signInUser(email, password)
       .then((result) => {
-        toast.success("Login successful", result);
+        toast.success("Login successful");
+        console.log('test')
+      
         navigate(from);
       })
       .catch((error) => {

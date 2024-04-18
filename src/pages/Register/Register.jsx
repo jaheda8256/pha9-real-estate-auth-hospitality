@@ -12,7 +12,7 @@ import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
-  const { createUser } = useAuth();
+  const { createUser, user, setUser } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
@@ -42,6 +42,10 @@ const Register = () => {
         updateProfile(result.user, profileUpdates)
         .then(() => {
           console.log("Profile updated successfully");
+          setUser({...user, 
+            displayName: fullName,
+            photoURL: photoURL
+          })
         })
         .catch((error) => {
           console.error("Error updating profile:", error);
